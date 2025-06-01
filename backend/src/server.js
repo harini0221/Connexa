@@ -38,9 +38,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// Connect to MongoDB first, THEN start the server
-connectDB().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+  connectDB();
 });
